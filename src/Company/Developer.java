@@ -1,4 +1,4 @@
-package Numbers;
+package Company;
 //Written by Arvind Dhindsa
 
 public class Developer extends Employee{
