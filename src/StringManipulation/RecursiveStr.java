@@ -13,13 +13,14 @@ public class RecursiveStr {
 		
 	      MinusOne(6);
 		
-		
+		System.out.println(str.substring(1));
+		System.out.println(str.charAt(1));
 	}
 	
 	
 	public static int MinusOne(int num){
 		
-		if(num==1){
+		if(num==0){
 			
 			return num;
 		}
@@ -43,6 +44,7 @@ public class RecursiveStr {
               return str;
           }
 
+         
           return reverseRecursively(str.substring(1)) + str.charAt(0);
 
       }
