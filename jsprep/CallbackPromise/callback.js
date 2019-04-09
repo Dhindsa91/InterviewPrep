@@ -29,3 +29,7 @@ setTimeout(()=> {
 getPosts();
 
 createPost({title: "post three", body:"this is post 3"}, getPosts);
+
+
+// Callback = passing a method into a method
+
