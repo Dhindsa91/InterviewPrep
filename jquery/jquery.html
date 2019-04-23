@@ -1,0 +1,368 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <title>JQuery</title>
+    <style>
+        body {
+            font-size: 17px;
+            font-family: arial;
+            line-height: 1.5em;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+
+        #container {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+            background-color: lightcyan;
+        }
+
+        #contain {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+            background-color: lightgray;
+
+        }
+
+        #subcontainer {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+            background-color: cadetblue;
+        }
+
+        #scontainer {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+           
+        }
+
+        #ancontainer {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+            background: lightsalmon;
+           
+        }
+        .box {
+            background: #333;
+            color: #fff;
+            height: 100px;
+            padding: 40px;
+            text-align: center;
+
+
+
+
+        }
+        .myClass{
+            color: blue;
+            background: black;
+
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+        <h1>Jquery Practice</h1>
+    </header>
+    <div id='container'>
+        <h1 id='heading1'>Heading One</h1>
+        <p id='para1'>
+
+            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged. <span id='span1'>It was popularised in the
+                1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+
+        </p>
+
+
+        <h1 id='heading2'>Heading Two</h1>
+        <p id='para2'>
+
+            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged. <span id='span2'>It was popularised in the
+                1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+
+        </p>
+
+        <ul id='list'>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+        </ul>
+
+        <input type="button" value="Button 1">
+        <input type="submit" value="Submit">
+        <input type="text">
+
+        <a href="http://google.com">Google</a>
+        <a href="http://yahoo.com">Yahoo</a>
+
+    </div>
+
+    <div id='contain'>
+        <h3>Mouse Event</h3>
+        <input type="button" id="btn1" value='BTN1'></button>
+        <input type="button" id="btn2" value='BTN2'></button>
+        <input type="button" id="btn3" value='BTN3'></button>
+        <small id='coord'></small>
+        <p id='pgraph'>
+            orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book.
+        </p>
+
+        
+    </div>
+
+    <div id='subcontainer'>
+            <form>
+                <legend>
+                    <label>Name</label><br>
+                    <input type='text' id='name' name='name'>
+                    <br>
+                    <label>Email</label><br>
+                    <input type='email' id='email' name='email'>
+                    <br>
+                    <label>Gender</label><br>
+                    <select type='gender' id='gender' name='gender'>
+                        <option value='male'>Male</option>
+                        <option value='female'>Female</option>
+                        <br>
+                        <input type='submit' value='Submit'>
+                </legend>
+
+            </form>
+
+        </div>
+
+        <div id='scontainer'>
+            <button id='btnbtn'>Button DOM</button>
+            <p class="parapara">This is a paragraph</p>
+            <p class="parapara2">This is another paragraph</p>
+
+
+            <ul id="secondlist">
+
+                    <li>List Item 1</li>
+                    <li>List Item 2</li>
+                    <li>List Item 3</li>
+                    <li>List Item 4</li>
+            </ul>
+    
+
+
+            <div id='myDiv'>
+               
+
+                 
+
+            </div>
+        </div>
+
+
+        <div id='ancontainer'>
+
+            <button id='btnFadeOut'>Fade Out</button>
+            <button id='btnFadeIn'>Fade In</button>
+            <button id='btnFadeTog'>Tog Out</button>
+
+            <button id='btnSlideOut'>Slide OUT</button>
+            <button id='btnSlideIn'>Slide Down</button>
+            <button id='btnSlideTog'>Slide Tog</button>
+
+            <hr>
+
+            <div id='box'><h1>World Hello</h1></div>
+
+            
+
+
+
+
+        </div>
+      
+
+
+
+
+
+
+    <script>
+
+
+//moveLeft() //moveRight() //.animate()
+
+        $(document).ready(function(){
+            $('#btnFadeOut').click(function(){
+                $('#box').fadeOut(3000,function(){
+                    $('#btnFadeOut').text('Its Gone');
+
+                });
+            });
+            $('#btnFadeIn').click(function(){
+                $('#box').fadeIn(3000);
+
+                });
+     
+
+            $('#btnFadeTog').click(function(){
+                $('#box').fadeToggle(3000);
+
+                });
+        
+
+
+
+             $('#btnSlideOut').click(function(){
+                $('#box').slideUp(3000,function(){
+                    $('#btnFadeOut').text('Its Gone');
+
+                });
+            });
+            $('#btnSlideIn').click(function(){
+                $('#box').slideDown(3000);
+
+                });
+     
+
+            $('#btnSlideTog').click(function(){
+                $('#box').slideToggle(3000);
+
+                });
+        
+
+
+
+
+        });
+
+
+        $(document).ready(function(){
+            $('.p.parapara').css({color: 'red'});
+            $('.p.parapara2').addClass('myClass'); //Also removeClass
+            $('#btnbtn').click(function(){
+                    $('p.parapara2').toggleClass('myClass');
+            });
+
+            $('#myDiv').html('<h3>Hello World</h3>');
+
+            $('ul').append('<li>Append Item</li>');
+
+            $('.parapara').appendTo('.parapara2');
+
+            $('input').focus(function(){   //Focus: clicking inside box, opposite is blur
+            $(this).css('background', 'pink');
+            });
+
+            $('input').keyup(function(e){
+                console.log(e.target.value);
+            });
+
+            $('select#gender').change(function(){
+                alert('Changed!');
+            }); 
+
+            $('#form').submit(function(e){
+            e.preventDefaul();
+            var name = $('input#name').val;
+                console.log(name);
+            })
+
+        });
+
+       
+
+
+
+
+
+
+
+
+
+
+        //$('h1').hide();
+        //$('#h2').hide();
+
+        $('p span').css('color', 'red');
+        $('ul#list li:first').css('color', 'red');
+        $('ul#list li:last').css('color', 'blue');
+        $('ul#list li:last').css('background-color', 'lightblue');
+
+        $(':button'); // : does to all
+        $('[href]').css('color', 'green')
+
+
+
+        // $(document).ready(function(){
+        //     $('#btn1').click(function(){
+        //     alert('Button Clicked');
+
+        //         });
+        //     });
+
+        // $("#btn1").on('click', function(){                       **Two ways to do this^**
+        //     alert('Button Clicked');
+        // });
+
+        $('#btn1').click(function () {
+            $('#pgraph')
+        .show(); //use .toggle() .hide() .show(); dblclick(func{}) hover(fnc{}) mouseenter() mouseleave() mousemove() mouseup() mousedown()
+        });
+
+        $('#btn2').click(function () {
+            $('#pgraph').hide();
+        });
+
+        $("#btn3").on('click', function (e) { //console logs the mouseclick settings        
+            // console.log(e);
+            console.log(e.currentTarget.id);
+        });
+        $(document).on('mousemove', function (e) {
+
+            $('#coord').html('Coords Y: ' + e.clientY + ' Coords X: ' + e.clientX);
+        
+        });
+
+       
+
+
+
+
+    </script>
+
+</body>
+
+</html>
