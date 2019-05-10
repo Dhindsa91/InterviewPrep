@@ -38,18 +38,22 @@ class App extends Component {
           )
       })
 
-
-
     }
 
+    delTodo = (id) =>{
+     
+      this.setState({ todos: [...this.state.todos.filter(todo=>todo.id !=id)]
+       
+      });
 
+    }
 
   render() {
 
     return (
       
       <div className="App">
-        <Todos todos={this.state.todos} markComplete={this.markComplete}/>
+        <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/>
 
 
     </div>
@@ -58,6 +62,8 @@ class App extends Component {
   }
 
 export default App;
+//No props since we're running it in this class
+
 
 
 //comes from the  state and accessed as props 
