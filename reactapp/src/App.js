@@ -10,7 +10,7 @@ class App extends Component {
         {
           id: 1,
           title: "Buy food",
-          completed: false
+          completed: true
         },
         {
           id: 2,
@@ -25,15 +25,32 @@ class App extends Component {
       ]
     }
 
+//now the id is being passed from the top 
+    markComplete = (id) =>{
+
+      this.setState({
+        todos: this.state.todos.map(todo=>{
+          if(todo.id==id){
+            todo.completed = !todo.completed
+          }
+          return todo;
+        }
+          )
+      })
+
+
+
+    }
 
 
 
   render() {
-    console.log(this.props.todos);
+
     return (
       
       <div className="App">
-        <Todos todos={this.state.todos}/>
+        <Todos todos={this.state.todos} markComplete={this.markComplete}/>
+
 
     </div>
     );
@@ -41,3 +58,10 @@ class App extends Component {
   }
 
 export default App;
+
+
+//comes from the  state and accessed as props 
+//Do we need Todo.propType =
+//Why setting state in App
+//Arrow function and this 
+//since no redux markComplete has to be a prop

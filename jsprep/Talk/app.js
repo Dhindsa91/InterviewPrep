@@ -1,6 +1,6 @@
 
 
-()=>{
+var test () =>{
 
 console.log('Arrow Function Logged');
 
@@ -13,4 +13,3 @@ function nonArrow(){
 
 }
 
-nonArrow();
