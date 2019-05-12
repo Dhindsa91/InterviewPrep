@@ -6,6 +6,10 @@ import PropTypes from 'prop-types';
 // double {{}} for inline style in JSQ
 export class TodoItem extends Component {
 
+  state ={
+
+  }
+
   getStyle = () =>{
     
       return{
@@ -53,7 +57,9 @@ const btnStyle = {
 }
 
 TodoItem.propTypes = {
-  todos: PropTypes.object.isRequired
+  todo: PropTypes.object.isRequired,
+  markComplete: PropTypes.func.isRequired,
+  delTodo: PropTypes.func.isRequired,
 }
 
 
